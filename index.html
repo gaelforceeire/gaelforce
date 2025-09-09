@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>GaelForce — Speak Irish</title>
+<meta name="description" content="GaelForce: a movement encouraging people to speak Irish — identity, culture, and pride." />
+<style>
+:root{
+  --green: #10b981;
+  --green-dark: #047857;
+  --muted: #9ca3af;
+  --bg:#0b1220;
+  --card: rgba(255,255,255,0.08);
+  --stroke: rgba(255,255,255,0.12);
+  --white: #f8fafc;
+  --accent: #a7f3d0;
+  --accent2: #ff7849;
+  --shadow: 0 12px 28px rgba(0,0,0,.35);
+  --radius: 18px;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{
+  font-family: "Avenir Next", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 900;
+  color: var(--white);
+  line-height:1.65;
+  background:
+    radial-gradient(1200px 600px at 10% -10%, rgba(16,185,129,.25), transparent 60%),
+    radial-gradient(900px 500px at 90% 10%, rgba(16,185,129,.18), transparent 60%),
+    linear-gradient(180deg, #06101a 0%, #05090f 100%), var(--bg);
+  overflow-x:hidden;
+}
+h1,h2,h3,h4,h5,h6{
+  font-family: "Avenir Next", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 900;
+}
+a{color:var(--accent2);text-decoration:none;}
+.container{width:min(1100px,92%);margin:0 auto;}
+header{position:sticky;top:0;background:rgba(5,9,15,.85);backdrop-filter:blur(10px);border-bottom:1px solid var(--stroke);z-index:10;}
+.nav{display:flex;justify-content:space-between;align-items:center;padding:16px 0;}
+.brand{display:flex;align-items:center;gap:.7rem;font-weight:900;}
+.logo{
+  width:50px;
+  height:50px;
+  object-fit: contain;
+  border-radius: 8px;
+}
+.btn{padding:.6rem 1rem;border-radius:999px;border:1px solid var(--stroke);background:linear-gradient(var(--green),var(--green-dark));color:#052014;font-weight:900;cursor:pointer;transition:.3s;}
+.btn:hover{transform:scale(1.05);box-shadow:0 0 12px var(--accent2);}
+.btn--ghost{background:transparent;color:var(--white);}
+.btn--ghost:hover{border-color:var(--green);color:var(--accent2);}
+.hero{padding:100px 0 60px;text-align:center;}
+.hero-logo {
+  width:120px;
+  display:block;
+  margin:0 auto 20px;
+  animation:logoPulse 3s ease-in-out infinite;
+}
+@keyframes logoPulse {
+  0%,100%{transform:scale(1);}
+  50%{transform:scale(1.05);}
+}
+.hero h1{
+  font-size:clamp(2.5rem,5vw,4rem);
+  margin:.3rem 0 1rem;
+  background:linear-gradient(90deg,var(--green),var(--accent2));
+  -webkit-background-clip:text;
+  color:transparent;
+  opacity:0;
+  animation:gradientText 5s ease infinite alternate, scaleIn 0.8s ease forwards;
+}
+@keyframes gradientText{0%{background-position:0%}100%{background-position:100%}}
+@keyframes scaleIn{
+  from {opacity:0; transform:scale(0.9);}
+  to {opacity:1; transform:scale(1);}
+}
+.hero .lead{color:#d7f1e0;font-size:1.25rem;max-width:720px;margin:0 auto;opacity:0;transform:translateY(15px);transition:.6s;font-weight:900;}
+section{padding:80px 0;}
+.section-title{font-size:2.4rem;margin-bottom:.6rem;color:var(--green);}
+.muted{color:var(--muted);}
+.grid{display:grid;gap:1.5rem;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));}
+.card{background: rgba(255,255,255,0.08); border:1px solid var(--stroke);border-radius: var(--radius);padding:26px;box-shadow: var(--shadow);transition: transform .3s,box-shadow .3s;position:relative;opacity:0;transform:translateY(10px);}
+.card:hover{transform:translateY(-6px);box-shadow:0 20px 40px rgba(0,0,0,.5);}
+.icon{width:40px;height:40px;border-radius:12px;display:grid;place-items:center;background:radial-gradient(#dcfce7,#34d399);color:#052014;margin-bottom:10px;font-size:1.5rem;}
+.footer{border-top:1px solid var(--stroke);padding:40px 0;text-align:center;color:var(--muted);}
+.visible{opacity:1!important;transform:translateY(0)!important;transition:.6s;}
+input,button{font-family:inherit;font-weight:900;}
+input:focus{outline:none;border-color:var(--accent2);box-shadow:0 0 8px var(--accent2);}
+form button:hover{box-shadow:0 0 12px var(--accent2);}
+</style>
+</head>
+<body>
+<header>
+  <div class="container nav">
+    <div class="brand">
+      <img src="mainlogogf.png" alt="GaelForce Logo" class="logo">
+      <b>GaelForce</b>
+    </div>
+    <div><a class="btn btn--ghost" href="#reasons">Why Irish?</a> <a class="btn" href="#ways">Ways</a></div>
+  </div>
+</header>
+
+<main>
+<section class="hero">
+  <img src="mainlogogf.png" alt="GaelForce Logo" class="hero-logo">
+  <h1>A living language. <span class="highlight">A living movement.</span></h1>
+  <p class="lead">GaelForce is a movement to get Irish spoken more. It’s not about lessons. It’s about everyday words, small actions, and keeping our language alive.</p>
+  <div style="margin-top:2rem;"><a class="btn" href="#ways">See how</a></div>
+</section>
+
+<section id="reasons">
+  <div class="container">
+    <h2 class="section-title">Why Irish matters</h2>
+    <p class="muted">These are the reasons people join GaelForce.</p>
+    <div class="grid" style="margin-top:18px">
+      <article class="card"><div class="icon">🇮🇪</div><h3>It’s part of us</h3><p>Irish is the language of this island. Speaking it keeps that connection alive.</p></article>
+      <article class="card"><div class="icon">🗣️</div><h3>English isn’t ours</h3><p>It was imposed. Our culture, land, and language were suppressed over centuries.</p></article>
+      <article class="card"><div class="icon">⚔️</div><h3>Historical oppression</h3><p>Colonization and systematic violence by the English caused devastation. Speaking Irish is reclaiming what was taken.</p></article>
+      <article class="card"><div class="icon">🌍</div><h3>Our own voice</h3><p>Every nation has its language. Speaking Irish gives Ireland its voice in the world.</p></article>
+      <article class="card"><div class="icon">🔥</div><h3>Small sparks matter</h3><p>Even using a word here and there helps keep it alive for everyone.</p></article>
+    </div>
+  </div>
+</section>
+
+<section id="ways">
+  <div class="container">
+    <h2 class="section-title">Ways to speak Irish today</h2>
+    <p class="muted">Small, simple actions that make a difference.</p>
+    <div class="grid" style="margin-top:18px">
+      <article class="card"><div class="icon">🎶</div><h3>Music</h3><p>Add Irish-language artists like Kneecap to your playlists.</p></article>
+      <article class="card"><div class="icon">📱</div><h3>TikTok</h3><p>Change your app language to Irish. Your feed will follow.</p></article>
+      <article class="card"><div class="icon">📸</div><h3>Social media</h3><p>Follow Irish-language pages or use a few words in captions.</p></article>
+      <article class="card"><div class="icon">📺</div><h3>Shows & videos</h3><p>Watch content with Irish subtitles or dubbing. Even YouTube creators use it.</p></article>
+      <article class="card"><div class="icon">🎮</div><h3>Gaming</h3><p>Use Irish words in chat or pick an Irish username.</p></article>
+      <article class="card"><div class="icon">💬</div><h3>Everyday chat</h3><p>Say “Dia dhuit”, “Slán”, or “GRMA”. Small words, big impact.</p></article>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">© <span id="year"></span> GaelForce — Speak Irish. Join the movement.</div>
+</footer>
+
+<script>
+// Year
+document.getElementById('year').textContent=new Date().getFullYear();
+
+// Card animation observer
+const cards = document.querySelectorAll('.card,.lead');
+const observer = new IntersectionObserver(entries=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){
+      entry.target.classList.add('visible');
+      observer.unobserve(entry.target);
+    }
+  });
+},{threshold:0.2});
+
+// Staggered card animation
+cards.forEach((card,i)=>{
+  card.style.transitionDelay = `${i * 0.15}s`;
+  observer.observe(card);
+});
+</script>
+</body>
+</html>
